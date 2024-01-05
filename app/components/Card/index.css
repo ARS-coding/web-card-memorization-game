@@ -1,10 +1,15 @@
 .card {
     height: 75px;
+    width: 75px;
     position: relative;
-    transform-style: preserve-3d;
+
+    transform-style: preserve-3d; /* render the whole card as 3d */
+    transition: all 0.2s; /* add transition for all card animations for 0.2 seconds */
+    transform: rotateY(0deg);
 }
 
 .card-front, .card-back {
+    /* below three lines are going to horizontally and vertically align the front and back divs within the card */
     position: absolute;
     left: 0;
     top: 0;
@@ -17,9 +22,17 @@
 }
 
 .card-front {
-    z-index: 2;
+    z-index: 2; /* make it appear above .card-back */
+
     font-size: 50px;
-    line-height: 75px;
-    vertical-align: middle;
-    text-align: center;
+
+    line-height: 75px; /* use 75px since the div.card-front will also have 75 px as it's height, which will center the text inside vertically. */
+    text-align: center; /* horizontally center the text */
+
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card-flipped {
+    transform: rotateY(180deg);
 }
