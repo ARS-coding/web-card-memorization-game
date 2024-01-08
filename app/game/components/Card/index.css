@@ -1,0 +1,39 @@
+.card {
+    height: 75px;
+    width: 75px;
+    position: relative;
+
+    transform-style: preserve-3d; /* render the whole card as 3d */
+    transition: all 0.2s; /* add transition for all card animations for 0.2 seconds */
+    transform: rotateY(0deg);
+}
+
+.card-front, .card-back {
+    /* below three lines are going to horizontally and vertically align the front and back divs within the card */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: antiquewhite;
+    border-radius: 50%;
+}
+
+.card-front {
+    z-index: 2; /* make it appear above .card-back */
+
+    font-size: 50px;
+
+    /* horizontally and vertically align the text within to the center */
+    line-height: 75px; 
+    text-align: center;
+
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card-flipped {
+    transform: rotateY(180deg);
+}
