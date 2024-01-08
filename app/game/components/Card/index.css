@@ -26,8 +26,9 @@
 
     font-size: 50px;
 
-    line-height: 75px; /* use 75px since the div.card-front will also have 75 px as it's height, which will center the text inside vertically. */
-    text-align: center; /* horizontally center the text */
+    /* horizontally and vertically align the text within to the center */
+    line-height: 75px; 
+    text-align: center;
 
     transform: rotateY(180deg);
     backface-visibility: hidden;
